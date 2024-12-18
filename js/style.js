@@ -50,8 +50,8 @@ $(function () {
         $(this).removeClass("on");
     });
     $("header i").on("click", function () {
-        $(this).addClass("on");
-        $("nav").slideDown();
+        // $(this).addClass("on");
+        $("nav").slideDown(1000);
     });
     $("nav i").on("click", function () {
         $("nav").hide();
@@ -90,7 +90,7 @@ $(function () {
     let baseline = -200;
     let con1 = $("#con1").offset().top + baseline;
     let con2 = $("#con2").offset().top;
-    let con3 = $("#con3").offset().top;
+    let con3 = $("#con3").offset().top + baseline;
     let con4 = $("#con4").offset().top;
     let robo = $(".portfolio li:first").offset().top;
     console.log(con4);
@@ -116,7 +116,7 @@ $(function () {
         } else {
             $(".con2_wrap .index li").removeClass("on");
         }
-        if ((scroll = con3)) {
+        if (scroll <= con3) {
             $(".snsicon div").addClass("on");
         } else if (scroll < con4) {
             $(".snsicon div").removeClass("on");
